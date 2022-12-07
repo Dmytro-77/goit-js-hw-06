@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+
+const galleryEl = document.querySelector('.gallery');
+const galleryItemEl = images.map((image) => `<li class = image> <img
+src=${image.url} alt=${image.alt}
+width = 120px>
+</li>`).join(''); 
+
+galleryEl.style.justifyContent =  "space-between";
+galleryEl.insertAdjacentHTML('beforeend', galleryItemEl);
