@@ -1,17 +1,25 @@
 const reft = {
-  countern: document.querySelector('#countern'),
-  valueEl: document.querySelector('#value'),
+  valueEl: document.querySelector("#value"),
   incrementBtn: document.querySelector('.button[data-action="increment"]'),
   decrementBtn: document.querySelector('.button[data-action="decrement"]'),
 };
 
-const countern = {
-    value = 0,
-    increment() {
- this.increment +=1
-    },
-    decrement() {
-        this.decrement +=1
-           },
-   
+const clickFunction = {
+  value: 0,
+
+  incMetod() {
+    this.value += 1;
+    return (refs.valueEl.textContent = this.value);
+  },
+  decMetod() {
+    this.value -= 1;
+    return (refs.valueEl.textContent = this.value);
+  },
 };
+
+refs.incrementBtn.addEventListener(
+  "click", clickFunction.incMetod.bind(clickFunction)
+);
+refs.decrementBtn.addEventListener(
+  "click", clickFunction.decMetod.bind(clickFunction)
+);
