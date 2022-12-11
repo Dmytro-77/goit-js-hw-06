@@ -1,5 +1,5 @@
 const work = (event) => {
-  refs.inputName === ""
+  refs.inputName.value === 0
     ? (refs.outputName.textContent = "Anon")
     : (refs.outputName.textContent = event.currentTarget.value);
 };
