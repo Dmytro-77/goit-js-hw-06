@@ -1,9 +1,18 @@
-const work = (event) => {
-  refs.inputName.value.length === 0
-    ? (refs.outputName.textContent = "Anon")
-    : (refs.outputName.textContent = event.currentTarget.value);
-};
+const input = document.querySelector(`input#name-input`);
+const output = document.querySelector(`span#name-output`);
 
-console.log(refs.outputName);
+console.log(input);
+console.log(output);
 
-refs.inputName.addEventListener("input", work);
+ input.addEventListener(`input`,(event) => {
+output.textContent = event.currentTarget.value;
+if (event.currentTarget.value === ``) {
+  output.textContent = `Anonymous`;
+}
+console.log(output.textContent)
+}
+);
+
+
+
+
