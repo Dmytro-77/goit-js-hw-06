@@ -1,16 +1,14 @@
-const refs = {
-styleEl: document.querySelector('style'),
-inputEl: document.querySelector('#validation-input'),
+const input = document.querySelector('#validation-input');
+
+input.addEventListener('blur', function() {
+
+if (Number(input.dataset.length) === input.value.length) {
+
+input.classList.remove('invalid');
+input.classList.add('valid');
+} else {
+ input.classList.add('invalid');
+ input.classList.remove('valid');
 }
-refs.inputEl.addEventListener('blur', onInputBlur)
+});
 
-function onInputBlur (event) {
-
-if (refs.inputEl.value.length === Number(refs.inputLength)) {
-
-refs.styleEl = refs.styleEl.classList.remo('#validation-input','#validation-input.valid')
-}
-refs.styleEl - refs.styleEl. classList.replace('#validation-input', '#validation-input.invalid')
-}
-
-console.log(refs. inputEl.value.length)
